@@ -5,7 +5,8 @@ const Keyboard = (props) => {
   const numbers01 = [1, 4, 7, "."];
   const numbers02 = [2, 5, 8, 0];
   const numbers03 = [3, 6, 9, "="];
-  const methods = ["C", "/", "*", "-", "+"];
+  const methods = ["DEL", "C", "/", "*", "-", "+"];
+  const adMethods = ["sqrt", "sin", "cos", "pow"];
 
   return (
     <View style={styles.container}>
@@ -44,6 +45,21 @@ const Keyboard = (props) => {
           })}
         </View>
       </View>
+      {props.adv ? (
+        ""
+      ) : (
+        <View style={styles.numberRow}>
+          {adMethods.map((elem) => {
+            return (
+              <Button
+                key={elem}
+                text={elem}
+                adjustInput={props.adjustInput}
+              ></Button>
+            );
+          })}
+        </View>
+      )}
       <View style={styles.methods}>
         {methods.map((elem) => {
           return (

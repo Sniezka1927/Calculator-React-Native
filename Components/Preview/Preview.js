@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   text: {
-    fontSize: 48,
+    fontSize: 24,
     // fontSize: 0.05 * width,
-    paddingVertical: 25,
+    paddingVertical: 35,
   },
 });
