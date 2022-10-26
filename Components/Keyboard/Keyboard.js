@@ -48,7 +48,7 @@ const Keyboard = (props) => {
       {props.adv ? (
         ""
       ) : (
-        <View style={styles.numberRow}>
+        <View style={styles.advanced}>
           {adMethods.map((elem) => {
             return (
               <Button
@@ -74,6 +74,7 @@ const Keyboard = (props) => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -92,6 +93,11 @@ const styles = StyleSheet.create({
   methods: {
     flex: 1,
     backgroundColor: "#7e7e7e",
+  },
+  advanced: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#3d3d3d",
   },
 });
 

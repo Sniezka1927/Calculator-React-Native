@@ -1,21 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 
 const Result = (props) => {
-  let result = eval(props.currentInput);
-  if (props.advMethod !== null) {
-    switch (props.advMethod) {
-      case "sqrt":
-        result = Math.sqrt(result);
-        console.log(result);
-        break;
-    }
-  }
-
-  props.resetMethod();
   return (
     <View style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.text}>{result}</Text>
+        <Text style={styles.text}>{props.result}</Text>
       </View>
     </View>
   );
@@ -27,11 +16,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#d3d3d3",
     justifyContent: "flex-end",
+    alignItems: "flex-end",
     flexDirection: "row",
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
   },
   text: {
-    fontSize: 24,
-    paddingVertical: 25,
+    fontSize: 42,
+    paddingVertical: 10,
   },
 });

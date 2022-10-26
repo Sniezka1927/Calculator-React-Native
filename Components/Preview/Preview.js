@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
 const Preview = (props) => {
-  console.log(props);
   return (
     <View style={styles.container}>
       <View style={styles.container}>
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
-    // fontSize: 0.05 * width,
+    // fontSize: width / 12,
     paddingVertical: 35,
   },
 });

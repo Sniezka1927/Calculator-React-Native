@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 
 const Button = (props) => {
   const onPress = () => {
@@ -12,6 +18,8 @@ const Button = (props) => {
     </TouchableOpacity>
   );
 };
+
+const width = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   container: {
