@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleSheet, Text, View } from "react-native";
 import Button from "./Button";
 
@@ -7,6 +8,15 @@ const Keyboard = (props) => {
   const numbers03 = [3, 6, 9, "="];
   const methods = ["DEL", "C", "/", "*", "-", "+"];
   const adMethods = ["sqrt", "sin", "cos", "pow"];
+=======
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
+>>>>>>> b68fbaeb79d8989b17a9bdd1d903261871d45a66
 
   return (
     <View style={styles.container}>
@@ -75,12 +85,15 @@ const Keyboard = (props) => {
   );
 };
 
+const width = Dimensions.get("screen").width;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "black",
     flexDirection: "row",
   },
+<<<<<<< HEAD
   numberRow: {
     flex: 1,
     flexDirection: "column",
@@ -98,6 +111,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     backgroundColor: "#3d3d3d",
+=======
+  text: {
+    fontSize: 36,
+    color: "#a8a8a8",
+>>>>>>> b68fbaeb79d8989b17a9bdd1d903261871d45a66
   },
 });
 
