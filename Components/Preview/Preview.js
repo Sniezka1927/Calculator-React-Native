@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
 const Preview = (props) => {
-  console.log(props);
   return (
     <View style={styles.container}>
       <View style={styles.container}>
@@ -21,8 +20,8 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   text: {
-    fontSize: 48,
-    // fontSize: 0.05 * width,
-    paddingVertical: 25,
+    fontSize: 24,
+    // fontSize: width / 12,
+    paddingVertical: 35,
   },
 });

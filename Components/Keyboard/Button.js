@@ -1,29 +1,104 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import Button from "./Button";
 
-const Button = (props) => {
-  const onPress = () => {
-    props.adjustInput(props.text);
-  };
+const Keyboard = (props) => {
+  const numbers01 = [1, 4, 7, "."];
+  const numbers02 = [2, 5, 8, 0];
+  const numbers03 = [3, 6, 9, "="];
+  const methods = ["DEL", "C", "/", "*", "-", "+"];
+  const adMethods = ["sqrt", "sin", "cos", "pow"];
+
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <View style={styles.container}>
-        <Text style={styles.text}>{props.text}</Text>
+    <View style={styles.container}>
+      <View style={styles.numbers}>
+        <View style={styles.numberRow}>
+          {numbers01.map((elem) => {
+            return (
+              <Button
+                key={elem}
+                text={elem}
+                adjustInput={props.adjustInput}
+              ></Button>
+            );
+          })}
+        </View>
+        <View style={styles.numberRow}>
+          {numbers02.map((elem) => {
+            return (
+              <Button
+                text={elem}
+                key={elem}
+                adjustInput={props.adjustInput}
+              ></Button>
+            );
+          })}
+        </View>
+        <View style={styles.numberRow}>
+          {numbers03.map((elem) => {
+            return (
+              <Button
+                text={elem}
+                key={elem}
+                adjustInput={props.adjustInput}
+              ></Button>
+            );
+          })}
+        </View>
       </View>
-    </TouchableOpacity>
+      {props.adv ? (
+        ""
+      ) : (
+        <View style={styles.advanced}>
+          {adMethods.map((elem) => {
+            return (
+              <Button
+                key={elem}
+                text={elem}
+                adjustInput={props.adjustInput}
+              ></Button>
+            );
+          })}
+        </View>
+      )}
+      <View style={styles.methods}>
+        {methods.map((elem) => {
+          return (
+            <Button
+              text={elem}
+              key={elem}
+              adjustInput={props.adjustInput}
+            ></Button>
+          );
+        })}
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    backgroundColor: "black",
     flexDirection: "row",
-    justifyContent: "center",
   },
-  text: {
-    fontSize: 48,
-    color: "#a8a8a8",
+  numberRow: {
+    flex: 1,
+    flexDirection: "column",
+  },
+  numbers: {
+    flex: 3,
+    flexDirection: "row",
+    backgroundColor: "#545454",
+  },
+  methods: {
+    flex: 1,
+    backgroundColor: "#7e7e7e",
+  },
+  advanced: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#3d3d3d",
   },
 });
 
-export default Button;
+export default Keyboard;
